@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './components/App/App';
 
 import { QueryClient, QueryClientProvider } from 'react-query';
 
@@ -9,4 +9,5 @@ ReactDOM.render(
     <QueryClientProvider client={client}>
         <App />
     </QueryClientProvider>,
-    document.getElementById('root'));
+    document.getElementById('root')
+);
