@@ -1,22 +1,38 @@
 import { Fragment } from 'react';
+
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import { GlobalStyle } from './../../utils/styles/GlobalStyle';
 
-import { Wrapper } from './App.styles';
+import { AppWrapper } from './App.styles';
 
 const App = () => {
 	return (
-		<Fragment>
-			<GlobalStyle />
-			<Wrapper>
-				<header>
-					<h1>Hello</h1>
-				</header>
+		<Router>
 
-				<div className="App">
-					<h2>Bellow</h2>
-				</div>
-			</Wrapper>
-		</Fragment>
+			{/* <Fragment> */}
+			<GlobalStyle />
+
+			<header>
+				<h1>Header</h1>
+			</header>
+
+			<AppWrapper>
+				<h3>Main</h3>
+				<Switch>
+					<Route>
+
+					</Route>
+
+				</Switch>
+			</AppWrapper>
+
+			<footer>
+				<h5>Footer</h5>
+			</footer>
+
+			{/* </Fragment> */}
+		</Router>
 	);
 
 }
