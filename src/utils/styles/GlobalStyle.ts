@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { FONTS } from './../styles/stylesConstants';
-
-import { DEVICE } from './stylesConstants';
+import { COLORS, FONTS, DEVICE } from './stylesConstants';
 
 export const GlobalStyle = createGlobalStyle`
     //Resets browser's default styles
@@ -87,7 +85,15 @@ export const GlobalStyle = createGlobalStyle`
     h6 {
         font-size: 1.2em;
     }
+    
+    a {
+        text-decoration: none;
 
-    //Media queries
+        /* @at-root {
+            .site-header a {
+                color: ${COLORS.textHighlighted};
+            }
+        } */
+    }
 
 `;
