@@ -1,7 +1,12 @@
-import { Fragment } from 'react';
-
+//Import external libraries
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+//Import internal libraries
+
+//Import components
+import Header from './../Header/Header';
+
+//Import styles
 import { GlobalStyle } from './../../utils/styles/GlobalStyle';
 
 import { AppWrapper } from './App.styles';
@@ -13,9 +18,7 @@ const App = () => {
 			{/* <Fragment> */}
 			<GlobalStyle />
 
-			<header>
-				<h1>Header</h1>
-			</header>
+			<Header />
 
 			<AppWrapper>
 				<h3>Main</h3>
