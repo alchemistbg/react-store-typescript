@@ -1,7 +1,7 @@
 //Import external libraries
 
 //Import internal libraries
-import { miscConstants } from '../../../utils/misc/miscConstants';
+import { miscConstants } from '../../../utils/miscConstants';
 
 //Import components
 
@@ -11,7 +11,7 @@ const Logo = () => {
     return <div className="site-logo">
         <img
             className="logo-image"
-            src={`${miscConstants.basicUrl}static/images/logo.png`}
+            src={`${miscConstants.basicUrl}/static/images/logo.png`}
             alt="Compass Store Logo"
         />
         <div className="logo-text">
