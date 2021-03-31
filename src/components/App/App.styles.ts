@@ -1,9 +1,48 @@
 import styled from 'styled-components';
 
-import { COLORS } from './../../utils/styles/stylesConstants';
+import { CONTENT_WIDTHS, COLORS, DEVICE_MAX_WIDTH } from '../../utils/styles/Constants';
 
 export const AppWrapper = styled.div`
-    & .App{
-        color: ${COLORS.textInNavigation};
+    min-height: 100vh;
+
+    header, footer{
+        color: ${COLORS.navigation_Text_Default};
+        background-color: ${COLORS.navigation_Background};
+    }
+
+    main{
+        min-height: calc(100vh - 14.5em);
+        color: ${COLORS.main_Text_Default};
+    }
+
+    .site-header,
+    .site-main,
+    .site-footer {
+        max-width: ${CONTENT_WIDTHS.mainContent_Width_Default};
+        margin: 0 auto;
+    }
+
+    @media (${DEVICE_MAX_WIDTH.laptopM}){
+        .site-header,
+        .site-main,
+        .site-footer {
+            max-width: ${CONTENT_WIDTHS.mainContent_Width_Medium}
+        }
+    }
+
+    @media (${DEVICE_MAX_WIDTH.tablet}){
+        .site-header,
+        .site-main,
+        .site-footer {
+            max-width: ${CONTENT_WIDTHS.mainContent_Width_Small}
+        }
+    }
+
+    header {
+        margin-bottom: 1em;
+    }
+
+    footer {
+        margin-top: 0.5em;
     }
 `;
