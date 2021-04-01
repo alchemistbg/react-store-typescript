@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { COLORS } from './../../utils/styles/stylesConstants';
+import { COLORS } from '../../utils/styles/Constants';
 
 export const HeaderWrapper = styled.header`
     .site-header {
@@ -8,8 +8,8 @@ export const HeaderWrapper = styled.header`
         display: flex;
         justify-content: space-between;
 
-        a {
-            color: ${COLORS.textHighlighted};
+        a{
+            color: ${COLORS.navigation_Text_Default}
         }
 
         .site-logo {
