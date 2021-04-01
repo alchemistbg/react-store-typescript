@@ -7,11 +7,18 @@ export const CONTENT_WIDTHS = {
 
 export const COLORS = {
     //Colors in Header and Footer
-    navigation_Text_Default: '#ffffff',
-    navigation_Text_Highlighted: '#852000',
-    navigation_Background: '#0f4c81',
-    //COlors in main
-    main_Text_Default: '#0f4c81',
+    navigation_Text_Default: 'rgb(255, 255, 255)',
+    navigation_Text_Highlighted: 'rgb(133, 32, 0)',
+    navigation_Background: 'rgb(15, 76, 129)',
+    //Colors in main
+    main_Text_Default: 'rgb(15, 76, 129)',
+    main_Text_Default_Alpha: 'rgba(15, 76, 129, 0.5)',
+    main_Text_Reversed: 'rgb(255, 255, 255)',
+    main_Background_Main: 'rgb(255, 255, 255)',
+    main_Background_Warning: 'rgb(133, 32, 0)',
+    //Color in outlines
+    outlineBorderMain: 'rgb(15, 76, 129)',
+    outlineAlternative: 'rgb(133, 32, 0)',
 }
 
 export const FONTS = {
@@ -61,5 +68,6 @@ export const DEVICE_MAX_WIDTH = {
 
 export const SHADOWS = {
     shadowColorLight: 'rgba(15, 76, 129, 0.25)',
+    shadowColorDark: 'rgba(15, 76, 129, 0.75',
     shadowShapeMain: '0px 0px 5px 2px',
 }
