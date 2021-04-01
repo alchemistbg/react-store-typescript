@@ -2,10 +2,10 @@
 import { Link } from 'react-router-dom';
 
 //Import internal libraries
-import { miscConstants } from './../../utils/misc/miscConstants';
+import { miscConstants } from '../../utils/miscConstants';
 
 //Import components
-import Logo from './Logo/Logo';
+import Logo from './../common/Logo/Logo';
 
 //Import styles
 import { HeaderWrapper } from './Header.styles';
@@ -13,14 +13,12 @@ import { HeaderWrapper } from './Header.styles';
 const Header = () => {
     return (
         <HeaderWrapper>
-            <header>
-                <div className='site-header'>
-                    <Link to={`${miscConstants.basicUrl}`}>
-                        <Logo />
-                    </Link>
-                </div>
-
-            </header>
+            <div className='site-header'>
+                {/* <Link to={`${miscConstants.basicUrl}`}> */}
+                <Link to="/">
+                    <Logo />
+                </Link>
+            </div>
         </HeaderWrapper>
     );
 }
