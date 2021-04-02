@@ -16,9 +16,12 @@ export const COLORS = {
     main_Text_Reversed: 'rgb(255, 255, 255)',
     main_Background_Main: 'rgb(255, 255, 255)',
     main_Background_Warning: 'rgb(133, 32, 0)',
+    main_Background_Reversed: 'rgb(15, 76, 129)',
     //Color in outlines
     outlineBorderMain: 'rgb(15, 76, 129)',
     outlineAlternative: 'rgb(133, 32, 0)',
+    //Colors in borders
+    borderMain: 'rgb(15, 76, 129)',
 }
 
 export const FONTS = {
@@ -70,4 +73,8 @@ export const SHADOWS = {
     shadowColorLight: 'rgba(15, 76, 129, 0.25)',
     shadowColorDark: 'rgba(15, 76, 129, 0.75',
     shadowShapeMain: '0px 0px 5px 2px',
+}
+
+export const TIMES = {
+    timeTransitionMain: '0.2s',
 }
