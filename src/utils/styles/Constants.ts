@@ -13,9 +13,10 @@ export const COLORS = {
     //Colors in main
     main_Text_Default: 'rgb(15, 76, 129)',
     main_Text_Default_Alpha: 'rgba(15, 76, 129, 0.5)',
+    main_Text_Highlighted: 'rgb(133, 32, 0)',
     main_Text_Reversed: 'rgb(255, 255, 255)',
     main_Background_Main: 'rgb(255, 255, 255)',
-    main_Background_Warning: 'rgb(133, 32, 0)',
+    main_Background_Highlighted: 'rgb(133, 32, 0)',
     main_Background_Reversed: 'rgb(15, 76, 129)',
     //Color in outlines
     outlineBorderMain: 'rgb(15, 76, 129)',
