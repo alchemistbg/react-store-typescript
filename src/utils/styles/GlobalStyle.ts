@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { COLORS, FONTS, DEVICE } from './stylesConstants';
+import { COLORS, FONTS, DEVICE_MIN_WIDTH } from './Constants';
 
 export const GlobalStyle = createGlobalStyle`
     //Resets browser's default styles
@@ -26,19 +26,19 @@ export const GlobalStyle = createGlobalStyle`
         font-size: ${FONTS.fontSizeBodyNormal};
     }
 
-    @media (${DEVICE.tablet}) {
+    @media (${DEVICE_MIN_WIDTH.tablet}) {
         html {
             font-size: ${FONTS.fontSizeBodyLarge};
         }
     }
 
-    @media (${DEVICE.laptopS}) {
+    @media (${DEVICE_MIN_WIDTH.laptopS}) {
         html {
             font-size: ${FONTS.fontSizeBodyLARGE};
         }
     }
 
-    @media (${DEVICE.desktopS}) {
+    @media (${DEVICE_MIN_WIDTH.desktopS}) {
         html {
             font-size: ${FONTS.fontSizeBodyHuge};
         }
@@ -88,12 +88,7 @@ export const GlobalStyle = createGlobalStyle`
     
     a {
         text-decoration: none;
-
-        /* @at-root {
-            .site-header a {
-                color: ${COLORS.textHighlighted};
-            }
-        } */
+        /* color: ${COLORS.navigation_Text_Default}; */
     }
 
 `;
