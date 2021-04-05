@@ -13,9 +13,9 @@ const Navigation = () => {
     useEffect(() => {
         let _count = 0;
 
-        for (let key in cartContext.cartState.items) {
-            _count += cartContext.cartState.items[key].length;
-        }
+        _count = cartContext.cartState.items.reduce((acc, curr) => {
+            return acc + curr.productQty;
+        }, 0);
 
         if (_count === cartItemsCount) {
             return
