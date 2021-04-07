@@ -4,12 +4,12 @@ import { COLORS, FONTS, DEVICE_MIN_WIDTH } from './Constants';
 
 export const GlobalStyle = createGlobalStyle`
     //Resets browser's default styles
-    * {
-        box-sizing: inherit;
-    }
-
     html {
         box-sizing: border-box;
+    }
+    
+    * {
+        box-sizing: inherit;
     }
 
     *,
@@ -26,19 +26,19 @@ export const GlobalStyle = createGlobalStyle`
         font-size: ${FONTS.fontSizeBodyNormal};
     }
 
-    @media (${DEVICE_MIN_WIDTH.tablet}) {
+    @media ${DEVICE_MIN_WIDTH.tablet} {
         html {
             font-size: ${FONTS.fontSizeBodyLarge};
         }
     }
 
-    @media (${DEVICE_MIN_WIDTH.laptopS}) {
+    @media ${DEVICE_MIN_WIDTH.laptopS} {
         html {
             font-size: ${FONTS.fontSizeBodyLARGE};
         }
     }
 
-    @media (${DEVICE_MIN_WIDTH.desktopS}) {
+    @media ${DEVICE_MIN_WIDTH.desktopS} {
         html {
             font-size: ${FONTS.fontSizeBodyHuge};
         }
@@ -88,7 +88,6 @@ export const GlobalStyle = createGlobalStyle`
     
     a {
         text-decoration: none;
-        /* color: ${COLORS.navigation_Text_Default}; */
     }
 
 `;

@@ -8,11 +8,11 @@ const ProductCardWrapper = styled.div`
     margin-bottom: 2%;
     box-shadow: ${SHADOWS.shadowShapeMain} ${SHADOWS.shadowColorLight};
 
-    @media(${DEVICE_MAX_WIDTH.tablet}){
+    @media ${DEVICE_MAX_WIDTH.tablet}{
         width: 48%;
     }
 
-    @media(${DEVICE_MAX_WIDTH.mobileL}){
+    @media ${DEVICE_MAX_WIDTH.mobileL}{
         width: 100%;
     }
 
@@ -80,17 +80,13 @@ const ProductCardWrapper = styled.div`
     }
 
     .card-meta {
-        color: var(--color-text-main);
+        color: ${COLORS.main_Text_Default};
     }
 
     .card-footer {
         margin-top: auto;
         padding-bottom: 1em;
-        color: var(--color-text-highlight);
-    }
-
-    .price {
-        color: var(--color-highlight-text);
+        color: ${COLORS.main_Background_Highlighted};
     }
 
     a {
