@@ -57,7 +57,7 @@ const SizeWrapper = styled.div`
             visibility: visible;
             font-weight: bold;
             color: ${COLORS.main_Text_Reversed};
-            background: ${COLORS.main_Background_Warning};
+            background: ${COLORS.main_Background_Highlighted};
         }
     }
 `;
