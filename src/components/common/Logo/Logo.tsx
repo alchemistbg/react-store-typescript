@@ -14,7 +14,7 @@ const Logo = () => {
             src={`${miscConstants.basicUrl}/static/images/logo.png`}
             alt="Compass Store Logo"
         />
-        <div className="logo-text">
+        <div className="logo-wrapper">
             <h2 className="logo-text">Compass Shop</h2>
             <h6 className="logo-subtext">for DEDICATED fans</h6>
         </div>
