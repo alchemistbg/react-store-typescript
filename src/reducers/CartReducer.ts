@@ -23,9 +23,19 @@ export const cartReducer = (state: ICartState, action: ICartActions) => {
 
     switch (action.type) {
         case 'ADD_TO_CART':
-            console.log(item)
-            if (items[item.item.name]) {
-                items[item.item.name].push(item);
+            if (itemIndex > -1) {
+                items[itemIndex].productQty += item.productQty;
+                items[itemIndex].productTotalPrice = (items[itemIndex].productQty * items[itemIndex].price);
+                updateCart(items);
+                return { ...state, items }
+            } else {
+                const product = { ...action.payload };
+                const productTotalPrice: number = product.price * product.productQty;
+                product.productTotalPrice = productTotalPrice;
+                items.push(product);
+                updateCart(items);
+                return { ...state, items };
+            }
             } else {
                 items[item.item.name] = [item];
             }
