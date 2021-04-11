@@ -1,15 +1,27 @@
 import ICartActions from '../utils/interfaces/ICartActions';
+import ICartItem from './../utils/interfaces/ICartItem';
 import ICartState from './../utils/interfaces/ICartState';
 
 export const initialCartState: ICartState = {
-    items: {}
+    items: []
 }
 
 export const cartReducer = (state: ICartState, action: ICartActions) => {
     let item = action.payload;
-    let { items } = state;
+    let items = state.items;
 
-    let itemIndex: number;
+    let itemIndex: number = -1;
+    if (item) {
+        if (action.type === 'ADD_TO_CART') {
+            itemIndex = items.findIndex((cartItem) => {
+                return (cartItem.id === item.id && cartItem.productSize === item.productSize);
+            })
+        } else {
+            itemIndex = items.findIndex((cartItem) => {
+                return (cartItem.id === item.id && cartItem.productSize === item.productSize);
+            });
+        }
+    }
 
     const updateCart = (data: ICartItem[]) => {
         localStorage.setItem("cartData", JSON.stringify(data));
