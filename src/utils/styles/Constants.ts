@@ -3,6 +3,9 @@ export const CONTENT_WIDTHS = {
     mainContent_Width_Default: '60vw',
     mainContent_Width_Medium: '75vw',
     mainContent_Width_Small: '90vw',
+    componentWidth_Default: '32%',
+    componentWidth_Medium: '48%',
+    componentWidth_Small: '100%',
 }
 
 export const COLORS = {
@@ -10,6 +13,7 @@ export const COLORS = {
     navigation_Text_Default: 'rgb(255, 255, 255)',
     navigation_Text_Highlighted: 'rgb(133, 32, 0)',
     navigation_Background: 'rgb(15, 76, 129)',
+    navigation_Background_Alpha: 'rgba(15, 76, 129, 0.5)',
     //Colors in main
     main_Text_Default: 'rgb(15, 76, 129)',
     main_Text_Default_Alpha: 'rgba(15, 76, 129, 0.5)',
@@ -18,6 +22,8 @@ export const COLORS = {
     main_Background_Main: 'rgb(255, 255, 255)',
     main_Background_Highlighted: 'rgb(133, 32, 0)',
     main_Background_Reversed: 'rgb(15, 76, 129)',
+    main_Background_Reversed_Alpha25: 'rgba(15, 76, 129, 0.25)',
+    main_Background_Reversed_Alpha50: 'rgba(15, 76, 129, 0.50)',
     //Color in outlines
     outlineBorderMain: 'rgb(15, 76, 129)',
     outlineAlternative: 'rgb(133, 32, 0)',
