@@ -75,6 +75,11 @@ export const cartReducer = (state: ICartState, action: ICartActions) => {
 
             return { ...state, items };
 
+        case 'CHECKOUT':
+            items = [];
+            clearCart();
+            return { items };
+
         default:
             return state;
     }
