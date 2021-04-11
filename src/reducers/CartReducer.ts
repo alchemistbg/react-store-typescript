@@ -11,14 +11,12 @@ export const cartReducer = (state: ICartState, action: ICartActions) => {
 
     let itemIndex: number;
 
-    // if (action.type === 'ADD_TO_CART') {
-    //     itemIndex = state.items.findIndex((cartItem) => {
-    //         console.log(cartItem)
-    //     })
-    // }
+    const updateCart = (data: ICartItem[]) => {
+        localStorage.setItem("cartData", JSON.stringify(data));
+    }
 
-    const updateCart = (items: ICartState) => {
-        localStorage.setItem("cartData", JSON.stringify(items));
+    const clearCart = () => {
+        localStorage.removeItem("cartData");
     }
 
     switch (action.type) {
