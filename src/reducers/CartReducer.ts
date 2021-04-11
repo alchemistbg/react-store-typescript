@@ -22,6 +22,14 @@ export const cartReducer = (state: ICartState, action: ICartActions) => {
     }
 
     switch (action.type) {
+        case 'LOAD_CART_FROM_STORAGE':
+            const cartContent = action.cartContent;
+            console.log(cartContent);
+            if (cartContent !== undefined) {
+                items = cartContent;
+            }
+            return { ...state, items };
+
         case 'ADD_TO_CART':
             if (itemIndex > -1) {
                 items[itemIndex].productQty += item.productQty;
