@@ -36,6 +36,20 @@ export const cartReducer = (state: ICartState, action: ICartActions) => {
                 updateCart(items);
                 return { ...state, items };
             }
+
+        case 'INCREMENT':
+            items[itemIndex].productQty += 1;
+            items[itemIndex].productTotalPrice = (items[itemIndex].productQty * items[itemIndex].price);
+            updateCart(items);
+            return { ...state, items };
+
+        case 'DECREMENT':
+            if (items[itemIndex].productQty > 1) {
+                items[itemIndex].productQty -= 1;
+                items[itemIndex].productTotalPrice = (items[itemIndex].productQty * items[itemIndex].price);
+            }
+            updateCart(items);
+            return { ...state, items };
             } else {
                 items[item.item.name] = [item];
             }
