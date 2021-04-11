@@ -50,12 +50,22 @@ export const cartReducer = (state: ICartState, action: ICartActions) => {
             }
             updateCart(items);
             return { ...state, items };
+
+        case 'REMOVE_FROM_CART':
+            items = items.filter((item, index) => {
+                if (index !== itemIndex) {
+                    return item;
+                }
+                return false;
+            })
+
+            if (items.length > 0) {
+                updateCart(items);
             } else {
-                items[item.item.name] = [item];
+                clearCart();
             }
 
-            // console.log(item)
-            return { ...state, items }
+            return { ...state, items };
 
         default:
             return state;
