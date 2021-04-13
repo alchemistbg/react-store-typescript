@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 
-import { SHADOWS, DEVICE_MAX_WIDTH, COLORS } from '../../utils/styles/Constants';
+import { CONTENT_WIDTHS, SHADOWS, DEVICE_MAX_WIDTH, COLORS } from '../../utils/styles/Constants';
 import { fadeIn } from './../../utils/styles/Animations';
 
 const ProductCardWrapper = styled.div`
-    width: 32%;
+    width: ${CONTENT_WIDTHS.componentWidth_Default};
     margin-bottom: 2%;
     box-shadow: ${SHADOWS.shadowShapeMain} ${SHADOWS.shadowColorLight};
 
     @media ${DEVICE_MAX_WIDTH.tablet}{
-        width: 48%;
+        width: ${CONTENT_WIDTHS.componentWidth_Medium};
     }
 
     @media ${DEVICE_MAX_WIDTH.mobileL}{
-        width: 100%;
+        width: ${CONTENT_WIDTHS.componentWidth_Small};
     }
 
     .card-inner {
@@ -50,9 +50,7 @@ const ProductCardWrapper = styled.div`
             background: rgba(15, 76, 129, 0.50);
             z-index: 500;
             /* opacity: 1; */
-        }
-
-        
+        }        
     }
 
     .card-media {
