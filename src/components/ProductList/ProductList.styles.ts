@@ -1,15 +1,26 @@
 import styled from 'styled-components';
-import { CONTENT_WIDTHS, COLORS, SHADOWS } from './../../utils/styles/Constants';
+import { CONTENT_WIDTHS, COLORS, SHADOWS, DEVICE_MAX_WIDTH } from './../../utils/styles/Constants';
 
 export const ProductListWrapper = styled.div`
     position: relative;
 
     .sort-select-container{
         background-color: ${COLORS.main_Background_Main};
-        width: ${CONTENT_WIDTHS.componentWidth_Default};
         position: absolute;
         z-index: 200;
         cursor: pointer;
+        width: ${CONTENT_WIDTHS.componentWidth_Default};
+        @media ${DEVICE_MAX_WIDTH.tablet}{        
+        &{
+            width: ${CONTENT_WIDTHS.componentWidth_Medium};
+        }
+    }
+
+        @media ${DEVICE_MAX_WIDTH.mobileL}{
+        &{
+            width: ${CONTENT_WIDTHS.componentWidth_Small};
+        }
+    }
 
         .sort-select-header, .sort-select-list{
             box-shadow: ${SHADOWS.shadowShapeMain} ${SHADOWS.shadowColorLight};
