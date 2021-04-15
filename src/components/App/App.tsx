@@ -7,11 +7,14 @@ import { products } from './../../utils/db.json';
 //Import components
 import Header from './../Header/Header';
 import Footer from './../Footer/Footer';
-import ProductList from "../ProductList/ProductList";
+import ProductList from "./../ProductList/ProductList";
 import ProductItem from './../ProductItem/ProductItem';
 
 import { CartContextProvider } from './../../contexts/CartContext';
 import { cartReducer, initialCartState } from './../../reducers/CartReducer';
+
+import { SortContextProvider } from './../../contexts/SortContext';
+import { sortReducer, initialSortState } from './../../reducers/SortReducer';
 
 //Import styles
 import { GlobalStyle } from './../../utils/styles/GlobalStyle';
@@ -24,46 +27,54 @@ import Cart from "../Cart/Cart";
 const App = () => {
 
 	const [cartState, cartDispatch] = useReducer(cartReducer, initialCartState);
+	const [sortState, sortDispatch] = useReducer(sortReducer, initialSortState);
 
 	const cartContextValues = {
 		cartState,
 		cartDispatch
 	}
 
+	const sortContextValues = {
+		sortState,
+		sortDispatch
+	}
+
 	return (
 		<CartContextProvider value={cartContextValues}>
-			<Router>
-				<GlobalStyle />
-				<AppWrapper>
+			<SortContextProvider value={sortContextValues}>
+				<Router>
+					<GlobalStyle />
+					<AppWrapper>
 
-					<Header />
+						<Header />
 
-					<main className='site-main'>
-						<Switch>
-							<Route
-								exact
-								path={"/"}
-								// path={`${miscConstants.basicUrl}`}
-								render={() => (<ProductList productItems={products} />)}
-							/>
-							<Route
-								exact
-								// path={`${miscConstants.basicUrl}/products/:id`}
-								path={"/products/:id"}
-								component={ProductItem}
-							/>
-							<Route
-								exact
-								path={"/cart"}
-								component={Cart}
-							/>
+						<main className='site-main'>
+							<Switch>
+								<Route
+									exact
+									path={"/"}
+									// path={`${miscConstants.basicUrl}`}
+									render={() => (<ProductList productItems={products} />)}
+								/>
+								<Route
+									exact
+									// path={`${miscConstants.basicUrl}/products/:id`}
+									path={"/products/:id"}
+									component={ProductItem}
+								/>
+								<Route
+									exact
+									path={"/cart"}
+									component={Cart}
+								/>
 
-						</Switch>
-					</main>
+							</Switch>
+						</main>
 
-					<Footer />
-				</AppWrapper>
-			</Router>
+						<Footer />
+					</AppWrapper>
+				</Router>
+			</SortContextProvider>
 		</CartContextProvider>
 	);
 
