@@ -6,19 +6,26 @@ type Props = {
     className: string;
     onClick: React.MouseEventHandler<HTMLButtonElement>;
     btnText: string;
-    icon: string;
+    btnIcon: string;
 }
 
-const Button: React.FC<Props> = ({ dataTestId = "", isDisabled, className, onClick, btnText, icon = "" }) => {
-    return <ButtonWrapper>
-        <button
+const Button: React.FC<Props> = ({ dataTestId = "", isDisabled, className, onClick, btnText, btnIcon = "" }) => {
+    return <ButtonWrapper
+        data-testid={dataTestId}
+        disabled={isDisabled}
+        className={className}
+        onClick={onClick}
+    // btnIcon={btnIcon}
+    // btnText={btnText}
+    >
+        {/* <button
             data-testid={dataTestId}
             disabled={isDisabled}
             className={className}
             onClick={onClick}
         >
-            {icon}{btnText}
-        </button>
+    </button> */}
+        {btnIcon}{btnText}
     </ButtonWrapper>
 }
 
