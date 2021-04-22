@@ -1,6 +1,6 @@
 import Button from './../Button/Button';
-import IProductItem from './../../../utils/interfaces/IProductItem';
-import ProductItem from './../../ProductItem/ProductItem';
+// import IProductItem from './../../../utils/interfaces/IProductItem';
+// import ProductItem from './../../ProductItem/ProductItem';
 import IQuantityProps from './../../../utils/interfaces/Props/IQuantityProps';
 import QuantityWrapper from './Quantity.styles';
 
@@ -21,7 +21,7 @@ const Quantity: React.FC<IQuantityProps> = ({ className, productItem, productQty
                     className="form-button decrement"
                     onClick={handleDecrement}
                     btnText={""}
-                    icon="" />
+                    btnIcon="" />
             ) : (
                 <Button
                     dataTestId={"decr"}
@@ -29,17 +29,17 @@ const Quantity: React.FC<IQuantityProps> = ({ className, productItem, productQty
                     className="form-button decrement"
                     onClick={handleDecrement}
                     btnText={""}
-                    icon="" />
+                    btnIcon="" />
             )
         }
-        {qty}
+        <span className="qty-number">{qty}</span>
         <Button
             dataTestId={"incr"}
             isDisabled={false}
             className="form-button increment"
             onClick={handleIncrement}
             btnText={""}
-            icon="" />
+            btnIcon="" />
     </QuantityWrapper>;
 }
 
