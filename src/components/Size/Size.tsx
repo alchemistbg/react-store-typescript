@@ -9,7 +9,7 @@ type Props = {
 const Size: React.FC<Props> = ({ sizes, handleSizeSelection }) => {
     return <SizeWrapper>
         <h6 className="size-list-title">This product is available in:</h6>
-        <div className="label-list">
+        <div className="size-label-list">
             {
                 sizes.map((size) => {
                     return <label htmlFor="size-radio" key={size} className="size-label" id={size} onClick={() => handleSizeSelection(size)}>
