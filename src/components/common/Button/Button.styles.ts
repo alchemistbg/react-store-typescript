@@ -63,6 +63,26 @@ const ButtonWrapper = styled.button.attrs((props) => ({
         &.decrement:before{
             content: '\f068';
         }
+    
+        &.btn-delete{
+            margin-top: 0.5em;
+            margin-left: 6em;
+            &:before{
+                padding-right: 0.5em;
+                content: '\f2ed';
+                font-family: 'Font Awesome 5 Free';
+                font-weight: normal;
+            }
+        }
+
+        &.btn-cart{
+            width: 100%;
+            &:before{
+                padding-right: 0.5em;
+                content: '\f788';
+                font-family: 'Font Awesome 5 Free';
+            }            
+        }
     }
 `;
 
