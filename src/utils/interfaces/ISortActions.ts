@@ -1,10 +1,8 @@
-import ICartItem from './ICartItem';
+import ISortState from './ISortState';
 
 interface ISortActions {
     type: 'LOAD_SORT_FROM_STORAGE' | 'SORT',
-    // payload: ICartItem[],
-    payload: string,
-    sortCriteria: string
+    payload: ISortState
 }
 
 export default ISortActions;
