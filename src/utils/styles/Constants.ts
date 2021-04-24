@@ -1,8 +1,8 @@
 
 export const CONTENT_WIDTHS = {
-    mainContent_Width_Default: '60vw',
-    mainContent_Width_Medium: '75vw',
-    mainContent_Width_Small: '90vw',
+    mainContent_Width_Default: '64vw',
+    mainContent_Width_Medium: '74vw',
+    mainContent_Width_Small: '92vw',
     componentWidth_Default: '32%',
     componentWidth_Medium: '48%',
     componentWidth_Small: '100%',
@@ -29,6 +29,9 @@ export const COLORS = {
     outlineAlternative: 'rgb(133, 32, 0)',
     //Colors in borders
     borderMain: 'rgb(15, 76, 129)',
+    ButtonDefault: 'rgb(15, 76, 129)',
+    ButtonDisabled_Alpha25: 'rgba(15, 76, 129, 0.25)',
+    ButtonDisabled_Alpha50: 'rgba(15, 76, 129, 0.50)',
 }
 
 export const FONTS = {
