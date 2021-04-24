@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-import { CONTENT_WIDTHS, COLORS, DEVICE_MAX_WIDTH, DEVICE_MIN_WIDTH } from '../../utils/styles/Constants';
+// import { CONTENT_WIDTHS, COLORS, DEVICE_MAX_WIDTH, DEVICE_MIN_WIDTH } from '../../utils/styles/Constants';
+import { CONTENT_WIDTHS, COLORS, DEVICE_MAX_WIDTH } from '../../utils/styles/Constants';
 
 export const AppWrapper = styled.div`
     min-height: 100vh;
@@ -22,7 +23,7 @@ export const AppWrapper = styled.div`
         margin: 0 auto;
     }
 
-    @media ${DEVICE_MAX_WIDTH.tablet}{        
+    @media ${DEVICE_MAX_WIDTH.laptopS}{        
         .site-header,
         .site-main,
         .site-footer {
@@ -30,7 +31,7 @@ export const AppWrapper = styled.div`
         }
     }
 
-    @media ${DEVICE_MAX_WIDTH.mobileM}{
+    @media ${DEVICE_MAX_WIDTH.mobileL}{
         .site-header,
         .site-main,
         .site-footer {
