@@ -1,18 +1,8 @@
-// import { useState } from 'react';
 import SelectItem from './SelectItem/SelectItem';
 import SelectWrapper from './Select.styles';
-import ISelectItem from './../../../utils/interfaces/ISelectItem';
+import ISelectProps from './../../../utils/interfaces/Props/ISelectProps';
 
-type Props = {
-    selectListClassName: string,
-    selectItemClassName: string,
-    selectListHeader?: string,
-    selectListItems: ISelectItem[],
-    onSelectChange(evt: React.SyntheticEvent<HTMLLIElement>): void,
-    selectedOption: string,
-}
-
-const Select: React.FC<Props> = ({ selectListClassName, selectItemClassName, selectListItems, onSelectChange, selectedOption }) => {
+const Select: React.FC<ISelectProps> = ({ selectListClassName, selectItemClassName, selectListItems, onSelectChange, selectedOption }) => {
 
     return <SelectWrapper className={selectListClassName}>
         {
