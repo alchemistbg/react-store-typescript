@@ -1,22 +1,15 @@
+import ISelectItemProps from '../../../../utils/interfaces/Props/ISelectItemProps';
 import SelectItemWrapper from './SelectItem.styles';
 
-type Props = {
-    selectItemKey: string,
-    selectItemClassName: string,
-    selectItem: string,
-    onClickHandler(evt: React.SyntheticEvent<HTMLLIElement>): void,
-    isSelected: boolean
-}
-
-const SelectItem: React.FC<Props> = ({ selectItemKey, selectItemClassName, selectItem, onClickHandler, isSelected }) => {
-    console.log(selectItem + isSelected);
+const SelectItem: React.FC<ISelectItemProps> = ({ selectItemKey, selectItemClassName, selectItem, onSelectChange, isSelected }) => {
     return (
         <SelectItemWrapper
             key={selectItemKey}
+
             className={`${selectItemClassName} ${isSelected ? "selected" : ""}`}
-            onClick={onClickHandler}
+            onClick={onSelectChange}
         >
-            <span className="list-item">{selectItem}</span>
+            <span className="list-item" item-key={selectItemKey}>{selectItem}</span>
 
         </SelectItemWrapper>
     )
