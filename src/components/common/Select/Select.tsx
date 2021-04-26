@@ -1,27 +1,28 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import SelectItem from './SelectItem/SelectItem';
 import SelectWrapper from './Select.styles';
+import ISelectItem from './../../../utils/interfaces/ISelectItem';
 
 type Props = {
     selectListClassName: string,
     selectItemClassName: string,
     selectListHeader?: string,
-    selectListItems: string[],
-    onClickHandler(evt: React.SyntheticEvent<HTMLLIElement>): void,
+    selectListItems: ISelectItem[],
+    onSelectChange(evt: React.SyntheticEvent<HTMLLIElement>): void,
     selectedOption: string,
 }
 
-const Select: React.FC<Props> = ({ selectListClassName, selectItemClassName, selectListItems, onClickHandler, selectedOption }) => {
+const Select: React.FC<Props> = ({ selectListClassName, selectItemClassName, selectListItems, onSelectChange, selectedOption }) => {
 
     return <SelectWrapper className={selectListClassName}>
         {
             selectListItems.map((item) => (
                 <SelectItem
-                    key={item}
+                    key={item.text}
                     selectItemClassName={selectItemClassName}
-                    selectItemKey={item} selectItem={item}
-                    onClickHandler={onClickHandler}
-                    isSelected={selectedOption === item}
+                    selectItemKey={item.key} selectItem={item.text}
+                    onSelectChange={onSelectChange}
+                    isSelected={selectedOption === item.text}
                 />
             ))
         }
