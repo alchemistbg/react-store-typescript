@@ -40,7 +40,19 @@ const ProductList: React.FC<Props> = ({ productItems }) => {
     ]
 
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedOption, setSelectedOption] = useState(selectListItems[0]);
+    const getSelectedItem = (clickedItem: HTMLLIElement | string): ISelectItem => {
+        let selectedItem: ISelectItem;
+        if (typeof clickedItem === 'string') {
+            selectedItem = selectListItems.filter((item) => {
+                return item.key === clickedItem;
+            })[0];
+        } else {
+            selectedItem = selectListItems.filter((item) => {
+                return item.key === clickedItem.getAttribute("item-key");
+            })[0];
+        }
+        return selectedItem;
+    }
 
     const onClickHandler = (evt: React.SyntheticEvent<HTMLLIElement>) => {
         const clickedItem = evt.currentTarget as HTMLLIElement;
