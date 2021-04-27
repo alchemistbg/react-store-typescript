@@ -12,7 +12,32 @@ type Props = {
 }
 
 const ProductList: React.FC<Props> = ({ productItems }) => {
-    const selectListItems = ['123', '1', '2'];
+    const selectListItems: ISelectItem[] = [
+        {
+            text: "Popularity (Desc)",
+            key: "timesSoldDesc",
+            criteria: "timesSold",
+            direction: "Desc"
+        },
+        {
+            text: "Popularity (Asc)",
+            key: "timesSoldAsc",
+            criteria: "timesSold",
+            direction: "Asc"
+        },
+        {
+            text: "Price (Desc)",
+            key: "priceDesc",
+            criteria: "price",
+            direction: "Desc"
+        },
+        {
+            text: "Price (Asc)",
+            key: "priceAsc",
+            criteria: "price",
+            direction: "Asc"
+        },
+    ]
 
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(selectListItems[0]);
