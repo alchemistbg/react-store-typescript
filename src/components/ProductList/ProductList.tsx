@@ -64,6 +64,9 @@ const ProductList: React.FC<Props> = ({ productItems }) => {
         });
     }
     sortProductList();
+    const toggleOpen = () => {
+        setIsOpen(!isOpen);
+    }
         setSelectedOption(clickedItem.innerText);
         setIsOpen(false);
     };
