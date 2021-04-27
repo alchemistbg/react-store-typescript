@@ -40,6 +40,7 @@ const ProductList: React.FC<Props> = ({ productItems }) => {
     ]
 
     const [isOpen, setIsOpen] = useState(false);
+    const [selectedOption, setSelectedOption] = useState("");
     const getSelectedItem = (clickedItem: HTMLLIElement | string): ISelectItem => {
         let selectedItem: ISelectItem;
         if (typeof clickedItem === 'string') {
