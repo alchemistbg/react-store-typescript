@@ -54,8 +54,16 @@ const ProductList: React.FC<Props> = ({ productItems }) => {
         return selectedItem;
     }
 
-    const onClickHandler = (evt: React.SyntheticEvent<HTMLLIElement>) => {
-        const clickedItem = evt.currentTarget as HTMLLIElement;
+    const sortProductList = () => {
+        productItems.sort((p1, p2) => {
+            if (sortDirection === "Desc") {
+                return +p2[sortCriteria as keyof IProductItem] - +p1[sortCriteria as keyof IProductItem]
+            } else {
+                return +p1[sortCriteria as keyof IProductItem] - +p2[sortCriteria as keyof IProductItem]
+            }
+        });
+    }
+    sortProductList();
         setSelectedOption(clickedItem.innerText);
         setIsOpen(false);
     };
