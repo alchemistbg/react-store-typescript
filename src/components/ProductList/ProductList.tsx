@@ -67,6 +67,28 @@ const ProductList: React.FC<Props> = ({ productItems }) => {
     const toggleOpen = () => {
         setIsOpen(!isOpen);
     }
+    const onLoad = () => {
+        const localStorageSortData: ISortState = JSON.parse(localStorage.getItem('tsSortData')!);
+
+        if (localStorageSortData) {
+            // console.log(localStorageSortData);
+            sortContext.sortDispatch({
+                type: "LOAD_SORT_FROM_STORAGE",
+                payload: {
+                    ...localStorageSortData
+                }
+            });
+            setSortCriteria(sortContext.sortState.sort.criteria);
+            setSortDirection(sortContext.sortState.sort.direction);
+
+            const selectedOption = getSelectedItem(`${sortCriteria}${sortDirection}`);
+            if (selectedOption) {
+                setSelectedOption(selectedOption.text);
+            }
+        }
+
+        sortProductList();
+    }
         setSelectedOption(clickedItem.innerText);
         setIsOpen(false);
     };
