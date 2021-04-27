@@ -92,13 +92,25 @@ const ProductList: React.FC<Props> = ({ productItems }) => {
 
         sortProductList();
     }
+    const onSelectChange = (evt: React.SyntheticEvent<HTMLLIElement>) => {
+        const clickedItem = evt.currentTarget.lastChild as HTMLLIElement;
         setSelectedOption(clickedItem.innerText);
         setIsOpen(false);
-    };
 
-    const toggleOpen = () => {
-        setIsOpen(!isOpen);
-    }
+        const selectedItem = getSelectedItem(clickedItem);
+
+        sortContext.sortDispatch({
+            type: 'SORT',
+            payload: {
+                sort: { ...selectedItem }
+            }
+        });
+
+        setSortCriteria(selectedItem.criteria);
+        setSortDirection(selectedItem.direction);
+
+        sortProductList();
+    };
 
     return (
         <ProductListWrapper>
