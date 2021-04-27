@@ -1,17 +1,25 @@
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import IProductItem from '../../utils/interfaces/IProductItem';
 import ProductCard from '../ProductCard/ProductCard';
 // import { ProductItemType } from '../../utils/types/types';
 
 
+import SortContext from '../../contexts/SortContext';
+
 import { ProductListWrapper } from './ProductList.styles';
 import Select from './../common/Select/Select';
+import ISelectItem from './../../utils/interfaces/ISelectItem';
+import SelectItem from './../common/Select/SelectItem/SelectItem';
+import ISortState from './../../utils/interfaces/ISortState';
 
 type Props = {
     productItems: IProductItem[]
 }
 
 const ProductList: React.FC<Props> = ({ productItems }) => {
+    const sortContext = useContext(SortContext);
+
+    // const selectListItems = ['Popularity (Desc)', 'Popularity (Asc)', 'Price (Desc)', 'Price (Asc)'];
     const selectListItems: ISelectItem[] = [
         {
             text: "Popularity (Desc)",
@@ -41,8 +49,11 @@ const ProductList: React.FC<Props> = ({ productItems }) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState("");
+    // const [selectedOption, setSelectedOption] = useState(selectListItems[0].text);
+
     let [sortCriteria, setSortCriteria] = useState(sortContext.sortState.sort.criteria);
     let [sortDirection, setSortDirection] = useState(sortContext.sortState.sort.direction);
+
     const getSelectedItem = (clickedItem: HTMLLIElement | string): ISelectItem => {
         let selectedItem: ISelectItem;
         if (typeof clickedItem === 'string') {
@@ -67,9 +78,11 @@ const ProductList: React.FC<Props> = ({ productItems }) => {
         });
     }
     sortProductList();
+
     const toggleOpen = () => {
         setIsOpen(!isOpen);
     }
+
     const onLoad = () => {
         const localStorageSortData: ISortState = JSON.parse(localStorage.getItem('tsSortData')!);
 
@@ -92,6 +105,11 @@ const ProductList: React.FC<Props> = ({ productItems }) => {
 
         sortProductList();
     }
+
+    // useEffect(() => {
+    //     sortProductList()
+    // }, [sortContext, sortProductList]);
+
     const onSelectChange = (evt: React.SyntheticEvent<HTMLLIElement>) => {
         const clickedItem = evt.currentTarget.lastChild as HTMLLIElement;
         setSelectedOption(clickedItem.innerText);
@@ -125,19 +143,18 @@ const ProductList: React.FC<Props> = ({ productItems }) => {
                         selectListClassName="sort-select-list"
                         selectItemClassName="sort-select-item"
                         selectListItems={selectListItems}
-                        onClickHandler={onClickHandler}
+                        onSelectChange={onSelectChange}
                         selectedOption={selectedOption}
                     />
                 }
             </span>
-            <div className="product-list">
+            <div className="product-list" onLoad={onLoad}>
                 {
                     productItems.map((product => {
                         return <ProductCard key={product.id} productItem={product} />
                     }))
                 }
             </div>
-
         </ProductListWrapper>
     );
 }
