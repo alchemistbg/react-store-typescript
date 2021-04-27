@@ -41,6 +41,8 @@ const ProductList: React.FC<Props> = ({ productItems }) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState("");
+    let [sortCriteria, setSortCriteria] = useState(sortContext.sortState.sort.criteria);
+    let [sortDirection, setSortDirection] = useState(sortContext.sortState.sort.direction);
     const getSelectedItem = (clickedItem: HTMLLIElement | string): ISelectItem => {
         let selectedItem: ISelectItem;
         if (typeof clickedItem === 'string') {
