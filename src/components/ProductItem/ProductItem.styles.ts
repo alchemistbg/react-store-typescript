@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-import { COLORS, SHADOWS } from './../../utils/styles/Constants';
+import { COLORS, DEVICE_MAX_WIDTH, SHADOWS } from './../../utils/styles/Constants';
 
 const ProductItemWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between;        
 
     .manufacturer {
         flex-basis: 100%;
@@ -14,6 +14,10 @@ const ProductItemWrapper = styled.div`
 
     .images{
         flex: 0 0 30%;
+        
+        @media ${DEVICE_MAX_WIDTH.mobileL}{
+            flex: 0 0 100%;
+        }
 
         img{
             width: 100%;
@@ -72,6 +76,10 @@ const ProductItemWrapper = styled.div`
         flex: 0 0 65%;
         display: flex;
         flex-direction: column;
+
+        @media ${DEVICE_MAX_WIDTH.mobileL}{
+            flex: 0 0 100%;
+        }
     }
 
     .info-wrapper{
@@ -84,17 +92,17 @@ const ProductItemWrapper = styled.div`
     }
 
     .qty-wrapper {
-        /* margin-left: auto; */
+        margin: 0;
+        width: 100%;
         display: flex;
-        align-items: center;
+        justify-content: space-between;
 
-        /* .form-button{
-            margin: 0 auto;
+        .product-item-qty{
         }
 
-        .cart {
-            margin-top: 1em;
-        } */
+        .qty-number{
+            width: 2.5em;
+        }
     }
 `;
 
