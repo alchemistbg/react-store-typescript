@@ -24,17 +24,17 @@ export const cartReducer = (state: ICartState, action: ICartActions) => {
     }
 
     const updateCart = (data: ICartItem[]) => {
-        localStorage.setItem("cartData", JSON.stringify(data));
+        localStorage.setItem("tsCartData", JSON.stringify(data));
     }
 
     const clearCart = () => {
-        localStorage.removeItem("cartData");
+        localStorage.removeItem("tsCartData");
     }
 
     switch (action.type) {
         case 'LOAD_CART_FROM_STORAGE':
             const cartContent = action.cartContent;
-            console.log(cartContent);
+            // console.log(cartContent);
             if (cartContent !== undefined) {
                 items = cartContent;
             }
