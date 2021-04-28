@@ -18,7 +18,7 @@ const Header = () => {
     const cartContext = useContext(CartContext);
 
     const handleOnLoad = () => {
-        const storedCart = localStorage.getItem("cartData");
+        const storedCart = localStorage.getItem("tsCartData");
         if (storedCart !== null) {
             cartContext.cartDispatch({
                 type: "LOAD_CART_FROM_STORAGE",
@@ -31,8 +31,8 @@ const Header = () => {
     return (
         <HeaderWrapper>
             <div className='site-header' onLoad={handleOnLoad}>
-                {/* <Link to={`${miscConstants.basicUrl}`}> */}
-                <Link to="/">
+                {/* <Link to="/"> */}
+                <Link to={`${miscConstants.baseUrl}`}>
                     <Logo />
                 </Link>
                 <Navigation />
